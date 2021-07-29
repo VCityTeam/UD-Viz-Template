@@ -1,7 +1,7 @@
 # A template application of the UD-Viz package
 
 This repository holds a template (demonstration) application of the [UD-Viz](https://github.com/VCityTeam/UD-Viz)
-JavaScript package. The goel of this template application is to
+JavaScript package. The goal of this template application is to
 
 - illustrate the main features of [UD-Viz](https://github.com/VCityTeam/UD-Viz),
 - provide code that demonstrates how such features can be configured/extended/embeded
