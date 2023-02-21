@@ -44,7 +44,7 @@ some server (possibly your desktop). For example
  * you can also modify the [application configuration file](assets/config/config.json)
 
 
-## Making your own UD-Viz based application
+## Deriving your own UD-Viz based application (out of UD-Viz template)
 The present `UD-Viz-Template` repository holds all the required elements constituting an independent JavaScript 
 application (using the UD-Viz package among others) as well as the technical means to build and run (and debug)
 that application.
