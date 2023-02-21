@@ -30,10 +30,10 @@ and then use your favorite (web) browser to open
 `http://localhost:8000/`.
 
 Note that technically the `npm run debug` command will use the [webpack-dev-server npm package](https://github.com/webpack/webpack-dev-server) that
- - runs node application that in turn launched a vanilla http sever in local (on your desktop) 
- - launches a watcher (surveying changes in sources)
- - in case of change that repacks an updated bundle
- - that triggers a client (hot) reload 
+ - runs node application that in turn launches a vanilla http sever in local (on your desktop) 
+ - launches a watcher (surveying changes in sources) that
+   - repacks and builds an updated bundle as soone as the sources are modified 
+   - triggers a client reload (aka hot reload) 
 
 ## Technical notes concerning the template application
 Some modules used by the DemoFull require some server-side components to be installed on
