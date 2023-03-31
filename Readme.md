@@ -97,6 +97,19 @@ configuration file that defines e.g.
     - the default `camera` position within the scene,
     - ...
 
+### When working with a docker container: the [`diff`](https://en.wikipedia.org/wiki/Diff) alternative strategy
+If you demo is defined within a [docker container](https://en.wikipedia.org/wiki/Docker_(software)) then an alternative strategy
+(to the complete replication of the DemoFull directory) consists in (within your `Dockerfile`)
+ - cloning the UD-Viz-demo repository,
+ - placing yourself (with [`WORKDIR`](https://docs.docker.com/engine/reference/builder/#workdir)) inside the `DemoFull` directory,
+ - overwriting the `DemoFull` code with your partial customizations (e.g. just overwriting `BaseDemo.js` and the `config.json` files).
+
+A example of this docker container based strategy can be found in the 
+[DatAgora_PartDieu](https://github.com/VCityTeam/UD-Reproducibility/blob/master/Demos/DatAgora_PartDieu/)
+demo as illustrated by the
+[Dockerfile](https://github.com/VCityTeam/UD-Reproducibility/blob/master/Demos/DatAgora_PartDieu/ud-viz-context/Dockerfile#L28)
+commands.
+
 --- 
 FIXME for all the bottom of this page
 
@@ -110,16 +123,4 @@ Ensuite trois cas d'utilisation:
 quand je dis meilleure méthode c'est mieux car le projet ud-viz beneficie directement de features réutilisable par les autres dev, et ca évite une étape d'intégration si jamais on désirait l'intégrer plus tard.
 
 
-### When working with a docker container: the [`diff`](https://en.wikipedia.org/wiki/Diff) alternative strategy
-If you demo is defined within a [docker container](https://en.wikipedia.org/wiki/Docker_(software)) then an alternative strategy
-(to the complete replication of the DemoFull directory) consists in (within your `Dockerfile`)
- - cloning the UD-Viz-demo repository,
- - placing yourself (with [`WORKDIR`](https://docs.docker.com/engine/reference/builder/#workdir)) inside the `DemoFull` directory,
- - overwriting the `DemoFull` code with your partial customizations (e.g. just overwriting `BaseDemo.js` and the `config.json` files).
-
-A example of this docker container based strategy can be found in the 
-[DatAgora_PartDieu](https://github.com/VCityTeam/UD-Reproducibility/blob/master/Demos/DatAgora_PartDieu/)
-demo as illustrated by the
-[Dockerfile](https://github.com/VCityTeam/UD-Reproducibility/blob/master/Demos/DatAgora_PartDieu/ud-viz-context/Dockerfile#L28)
-commands.
 
