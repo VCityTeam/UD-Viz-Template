@@ -105,9 +105,9 @@ If you demo is defined within a [docker container](https://en.wikipedia.org/wiki
  - overwriting the `DemoFull` code with your partial customizations (e.g. just overwriting `BaseDemo.js` and the `config.json` files).
 
 A example of this docker container based strategy can be found in the 
-[DatAgora_PartDieu](https://github.com/VCityTeam/UD-Reproducibility/blob/master/Demos/DatAgora_PartDieu/)
+[DatAgora_PartDieu](https://github.com/VCityTeam/UD-Demo-DatAgora-Vegetalisation-PartDieu)
 demo as illustrated by the
-[Dockerfile](https://github.com/VCityTeam/UD-Reproducibility/blob/master/Demos/DatAgora_PartDieu/ud-viz-context/Dockerfile#L28)
+[Dockerfile](https://github.com/VCityTeam/UD-Demo-DatAgora-Vegetalisation-PartDieu/ud-viz-context/Dockerfile#L28)
 commands.
 
 --- 
