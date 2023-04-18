@@ -1,5 +1,6 @@
 /** @file Running the build-debug script */
 const exec = require('child-process-promise').exec;
+const openBrowser = require('open-web-browser');
 
 /**
  * It prints the stdout and stderr of a result object
@@ -17,6 +18,7 @@ exec('npm run build-debug --prefix ./packages/browser').then(printExec);
 // run a build debug bundle node
 exec('npm run build-debug --prefix ./packages/node')
   .then(printExec)
+  // start a server
   .then(() => {
     const {
       MyAppNameServer,
@@ -26,4 +28,9 @@ exec('npm run build-debug --prefix ./packages/node')
       folder: './packages/browser',
       port: 8000,
     });
+  })
+  .then(() => {
+    if (openBrowser('http://localhost:8000')) {
+      console.log('The browser tab has been opened!');
+    }
   });
