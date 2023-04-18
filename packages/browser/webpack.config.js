@@ -1,13 +1,19 @@
 const path = require('path');
 const mode = process.env.NODE_ENV;
 const webpack = require('webpack');
+const { merge } = require('webpack-merge');
+
 require('dotenv').config({ path: '../../.env' });
 
 const debugBuild = mode === 'development';
-let devTool = false;
-if (debugBuild) {
-  devTool = 'source-map';
-}
+
+const rules = [
+  {
+    // We also want to (web)pack the style files:
+    test: /\.css$/,
+    use: ['style-loader', 'css-loader'],
+  },
+];
 
 // Inject environnement variables (they have to be declare in your .env !!!)
 const keyEnvVariables = ['MY_ENV_VARIABLE'];
@@ -25,29 +31,33 @@ plugins.push(
   })
 );
 
-module.exports = () => {
-  const rules = [
-    {
-      // We also want to (web)pack the style files:
-      test: /\.css$/,
-      use: ['style-loader', 'css-loader'],
-    },
-  ];
-
-  return {
-    mode: mode,
-    entry: path.resolve(__dirname, './src/bootstrap.js'),
-    devtool: devTool,
-    output: {
-      path: path.resolve(__dirname, 'dist/' + mode),
-      filename: 'bundle.js',
-      library: 'myAppNameBrowser',
-      libraryTarget: 'umd',
-      umdNamedDefine: true,
-    },
-    module: {
-      rules: rules,
-    },
-    plugins: plugins,
-  };
+const commonConfig = {
+  entry: path.resolve(__dirname, './src/bootstrap.js'),
+  output: {
+    filename: 'bundle.js',
+    library: 'myAppNameBrowser',
+    libraryTarget: 'umd',
+    umdNamedDefine: true,
+  },
+  module: {
+    rules: rules,
+  },
+  plugins: plugins,
 };
+
+const devConfig = {
+  mode: 'development',
+  devtool: 'source-map',
+  output: {
+    path: path.resolve(__dirname, 'dist/debug'),
+  },
+};
+
+const prodConfig = {
+  mode: 'production',
+  output: {
+    path: path.resolve(__dirname, 'dist/release'),
+  },
+};
+
+module.exports = merge(commonConfig, debugBuild ? devConfig : prodConfig);

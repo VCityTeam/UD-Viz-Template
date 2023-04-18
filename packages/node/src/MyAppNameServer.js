@@ -1,10 +1,10 @@
-const udvizNode = require('@ud-viz/node');
+const ExpressAppWrapper = require('@ud-viz/node').ExpressAppWrapper;
 
 module.exports = class MyAppNameServer {
   constructor() {}
 
   start(config) {
-    const expressAppWrapper = new udvizNode.ExpressAppWrapper();
+    const expressAppWrapper = new ExpressAppWrapper();
 
     // eslint-disable-next-line no-undef
     console.log(MY_ENV_VARIABLE);
