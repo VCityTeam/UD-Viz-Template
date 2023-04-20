@@ -6,12 +6,11 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --config=./webpack.config.js",
     "build-debug": "cross-env NODE_ENV=development webpack --config=./webpack.config.js",
-    "test": "node --trace-warnings ./bin/test.js",
-    "debug": "nodemon --trace-warnings --verbose --watch src --watch ./bin/Test/**/*.js --delay 2500ms ./bin/debug.js -e js"
+    "test": "node --trace-warnings ./bin/test.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@ud-viz/shared": "^3.0.0"
+    "@ud-viz/shared": "file:../../../UD-Viz/packages/shared"
   }
 }
