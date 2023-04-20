@@ -7,5 +7,6 @@ shared.print();
 if (DEBUG) {
   console.info('Your app is in DEBUG mode');
 }
-
-console.log('test');
+const h1 = document.createElement('h1');
+h1.textContent = 'WELCOME IN YOUR UD-VIZ APP';
+document.body.appendChild(h1);
