@@ -32,7 +32,7 @@ plugins.push(
 );
 
 const commonConfig = {
-  entry: path.resolve(__dirname, './src/bootstrap.js'),
+  entry: path.resolve(__dirname, './src/index.js'),
   output: {
     filename: 'bundle.js',
     library: 'myAppNameShared',

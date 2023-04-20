@@ -1,9 +1,12 @@
 const path = require('path');
+const mode = process.env.NODE_ENV;
 const nodeExternals = require('webpack-node-externals');
 const webpack = require('webpack');
+const { merge } = require('webpack-merge');
+
 require('dotenv').config({ path: '../../.env' });
 
-const mode = process.env.NODE_ENV;
+const debugBuild = mode === 'development';
 
 // Inject environnement variables (they have to be declare in your .env !!!)
 const keyEnvVariables = ['MY_ENV_VARIABLE'];
@@ -15,26 +18,32 @@ keyEnvVariables.forEach(function (key) {
 });
 plugins.push(new webpack.DefinePlugin(params));
 
-let outputPath;
-if (mode === 'development') {
-  outputPath = path.resolve(__dirname, 'dist/' + mode);
-} else {
-  outputPath = path.resolve(__dirname, 'dist/' + mode);
-}
-
-module.exports = () => {
-  return {
-    target: 'node',
-    mode: mode,
-    externals: [nodeExternals()],
-    entry: path.resolve(__dirname, 'src/index.js'),
-    output: {
-      path: outputPath,
-      filename: 'bundle.js',
-      library: 'myAppNameNode',
-      libraryTarget: 'umd',
-      umdNamedDefine: true,
-    },
-    plugins: plugins,
-  };
+const commonConfig = {
+  target: 'node',
+  externals: [nodeExternals()],
+  entry: path.resolve(__dirname, 'src/index.js'),
+  output: {
+    filename: 'bundle.js',
+    library: 'myAppNameNode',
+    libraryTarget: 'umd',
+    umdNamedDefine: true,
+  },
+  plugins: plugins,
 };
+
+const devConfig = {
+  mode: 'development',
+  devtool: 'source-map',
+  output: {
+    path: path.resolve(__dirname, 'dist/debug'),
+  },
+};
+
+const prodConfig = {
+  mode: 'production',
+  output: {
+    path: path.resolve(__dirname, 'dist/release'),
+  },
+};
+
+module.exports = merge(commonConfig, debugBuild ? devConfig : prodConfig);
