@@ -4,8 +4,8 @@
   "description": "This is your my_app_name shared package description",
   "main": "src/index.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --config=./webpackConfig/webpack.config.js",
-    "build-debug": "cross-env NODE_ENV=development webpack --config=./webpackConfig/webpack.config.js",
+    "build": "cross-env NODE_ENV=production webpack --config=./webpack.config.js",
+    "build-debug": "cross-env NODE_ENV=development webpack --config=./webpack.config.js",
     "test": "node --trace-warnings ./bin/test.js",
     "debug": "nodemon --trace-warnings --verbose --watch src --watch ./bin/Test/**/*.js --delay 2500ms ./bin/debug.js -e js"
   },
