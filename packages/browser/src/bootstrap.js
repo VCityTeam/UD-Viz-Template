@@ -3,7 +3,7 @@ import { SharedClass } from '@my_app_name/shared';
 import '../style.css';
 
 const domElement = document.body;
-// eslint-disable-next-line no-undef
+
 if (DEBUG) {
   console.info('Your app is in DEBUG mode');
   const scriptReload = document.createElement('script');
@@ -32,6 +32,12 @@ linkUDVGH.appendChild(imgGitHubLogo);
 const labelLinkUDVGH = document.createElement('label');
 labelLinkUDVGH.textContent = 'Github UD-Viz';
 linkUDVGH.appendChild(labelLinkUDVGH);
+
+const linkLearnUDViz = document.createElement('p');
+linkLearnUDViz.textContent =
+  'Modify ./packages/browser/bootstrap.js' + DEBUG
+    ? ' and save to reload'
+    : ' then rebuild and reload';
 
 mainDiv.appendChild(linkUDVGH);
 
