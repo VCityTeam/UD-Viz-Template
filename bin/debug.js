@@ -1,5 +1,6 @@
 /** @file Running the build-debug script */
 const exec = require('child-process-promise').exec;
+const spawn = require('child-process-promise').spawn;
 
 /**
  * It prints the stdout and stderr of a result object
@@ -19,12 +20,14 @@ exec('npm run build-debug --prefix ./packages/node')
   .then(printExec)
   // start a server
   .then(() => {
-    const {
-      MyAppNameServer,
-    } = require('../packages/node/dist/development/bundle.js');
-    const app = new MyAppNameServer();
-    app.start({
-      folder: './packages/browser',
-      port: 8000,
+    const child = spawn('node', ['./bin/host.js', process.env.PORT || 8000], {
+      shell: true,
+    });
+
+    child.childProcess.stdout.on('data', (data) => {
+      console.log(`${data}`);
+    });
+    child.childProcess.stderr.on('data', (data) => {
+      console.error('\x1b[31m', 'host' + ` ERROR :\n${data}`);
     });
   });
