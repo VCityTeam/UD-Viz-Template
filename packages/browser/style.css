@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+}
+
+#main_div {
+  text-align: center;
+  background: rgb(72, 111, 240);
+  background: radial-gradient(
+    circle,
+    rgba(72, 111, 240, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+#main_div a {
+  color: #174a7c;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+#main_div a * {
+  cursor: pointer;
+}
+
+#main_div img {
+  object-fit: contain;
+  height: 5em;
+}

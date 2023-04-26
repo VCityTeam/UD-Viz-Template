@@ -1,5 +1,7 @@
 const express = require('express');
 const { stringReplace } = require('string-replace-middleware');
+const reload = require('reload');
+
 const app = express();
 
 // run an express server
@@ -21,13 +23,15 @@ app.use(
 );
 
 app.use(express.static('./packages/browser'));
-app.listen(port);
 
-const bundlePath = '../packages/node/dist/' + runMode + '/bundle.js';
+reload(app).then(() => {
+  app.listen(port);
+});
 
 try {
   // start applicaction server
-  const { MyAppNameServer } = require(bundlePath);
+  const { MyAppNameServer } = require('@my_app_name/node');
+
   const myAppNameServer = new MyAppNameServer();
   myAppNameServer.start();
 } catch (e) {
