@@ -1,8 +1,11 @@
+/* The environment variables contained in .env are loaded into the Node.js process*/
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
+
 module.exports = class MyAppNameServer {
   constructor() {}
 
   start() {
-    // eslint-disable-next-line no-undef
-    console.log(MY_ENV_VARIABLE);
+    console.log(process.env.MY_ENV_VARIABLE);
   }
 };
