@@ -20,7 +20,7 @@ jobs:
     - stage: DemoFull
       script:
         - npm install && npm run travis
-    - stage: "Markdown link checks"
+    - stage: 'Markdown link checks'
       language: node_js
       script:
         - npm install --global remark-cli remark-validate-links
