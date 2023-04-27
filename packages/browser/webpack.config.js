@@ -3,8 +3,6 @@ const mode = process.env.NODE_ENV;
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 
-require('dotenv').config({ path: '../../.env' });
-
 const debugBuild = mode === 'development';
 
 const rules = [
@@ -14,7 +12,6 @@ const rules = [
     use: ['style-loader', 'css-loader'],
   },
 ];
-
 // Inject environnement variables (they have to be declare in your .env !!!)
 const keyEnvVariables = ['MY_ENV_VARIABLE'];
 const plugins = [];

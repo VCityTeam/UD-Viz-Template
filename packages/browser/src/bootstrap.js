@@ -32,14 +32,13 @@ linkUDVGH.appendChild(imgGitHubLogo);
 const labelLinkUDVGH = document.createElement('label');
 labelLinkUDVGH.textContent = 'Github UD-Viz';
 linkUDVGH.appendChild(labelLinkUDVGH);
+mainDiv.appendChild(linkUDVGH);
 
 const linkLearnUDViz = document.createElement('p');
 linkLearnUDViz.textContent =
-  'Modify ./packages/browser/bootstrap.js' + DEBUG
-    ? ' and save to reload'
-    : ' then rebuild and reload';
-
-mainDiv.appendChild(linkUDVGH);
+  'Modify ./packages/browser/bootstrap.jss' +
+  (DEBUG ? ' and save to reload' : ' then rebuild and reload');
+mainDiv.appendChild(linkLearnUDViz);
 
 domElement.appendChild(mainDiv);
 

@@ -5,7 +5,7 @@ const reload = require('reload');
 const app = express();
 
 // run an express server
-const port = process.argv[2];
+const port = process.argv[2] || 8000;
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const runMode = NODE_ENV === 'production' ? 'release' : 'debug';
 
@@ -26,6 +26,7 @@ app.use(express.static('./packages/browser'));
 
 reload(app).then(() => {
   app.listen(port);
+  console.log('HTTP SERVER IS RUNNING OF PORT', port);
 });
 
 try {

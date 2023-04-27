@@ -15,7 +15,9 @@
     "build-shared": "npm run build --prefix ./packages/shared",
     "build-browser": "npm run build --prefix ./packages/browser",
     "build-node": "npm run build --prefix ./packages/node",
-    "debug": "cross-env NODE_ENV=development nodemon --trace-warnings --verbose --watch ./packages/shared/src --watch ./packages/browser/src --watch ./packages/browser/style.css --watch ./packages/node/src  --delay 2500ms ./bin/debug.js -e js,css,html",
+    "debug": "dotenv -e .env -- cross-env NODE_ENV=development nodemon --trace-warnings --verbose --watch ./packages/shared/src --watch ./packages/browser/src --watch ./packages/browser/style.css --watch ./packages/node/src  --delay 2500ms ./bin/debug.js -e js,css,html",
+    "host": "dotenv -e .env -- cross-env NODE_ENV=production node ./bin/host.js",
+    "start": "dotenv -e .env -- npm run build-browser && npm run host",
     "test": "node ./bin/test.js"
   },
   "repository": {
@@ -36,7 +38,7 @@
     "child-process-promise": "^2.2.1",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
-    "dotenv": "^16.0.1",
+    "dotenv-cli": "^7.2.1",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-html": "^7.1.0",
