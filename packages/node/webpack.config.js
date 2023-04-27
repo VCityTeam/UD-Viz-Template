@@ -1,9 +1,17 @@
 const path = require('path');
 const mode = process.env.NODE_ENV;
 const nodeExternals = require('webpack-node-externals');
+const webpack = require('webpack');
+
 const { merge } = require('webpack-merge');
 
 const debugBuild = mode === 'development';
+const plugins = [];
+plugins.push(
+  new webpack.DefinePlugin({
+    DEBUG: debugBuild,
+  })
+);
 
 const commonConfig = {
   target: 'node',
@@ -15,6 +23,7 @@ const commonConfig = {
     libraryTarget: 'umd',
     umdNamedDefine: true,
   },
+  plugins: plugins,
 };
 
 const devConfig = {
