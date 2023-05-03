@@ -71,7 +71,7 @@ To understand globally the functionning we will explain what does the `npm run d
 
 ## Base your application on UD-Viz examples
 
-To learn what you can do with UD-Viz (to get starte at least the `@ud-viz/browser` package) you can read the differents [examples](https://github.com/VCityTeam/UD-Viz/tree/master/examples) with attached [documentation](https://github.com/VCityTeam/UD-Viz/tree/master/docs/static/Devel/UD_Viz_Browser) and try to transpose them in your application.
+To learn what you can do with UD-Viz (to get start at least the `@ud-viz/browser` package) you can read the differents [examples](https://github.com/VCityTeam/UD-Viz/tree/master/examples) with attached [documentation](https://github.com/VCityTeam/UD-Viz/tree/master/docs/static/Devel/UD_Viz_Browser) and try to transpose them in your application.
 
 You can start by the [SideBarWidget](https://github.com/VCityTeam/UD-Viz/tree/master/examples/SideBarWidget.html) example. Thanks to this example you pass over all main widgets ud-viz offered you and you see how to create your 3D Scene with iTowns.
 
