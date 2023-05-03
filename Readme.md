@@ -47,6 +47,7 @@ Reminders:
 - Your app is a 3-package application, based on 3-package framework UD-Viz, respectively browser, shared and node. 
 - Split-code by interpretation environment:  `browser` package is interpretable by the browser,  `node` package is interpretable by Node.js and  `shared` package is interpretable by both environments.
 - The entry point of your application is the main [./package.json](./package.json). See doc [here](https://docs.npmjs.com/cli/v6/configuring-npm/package-json).
+- The code is bundled with webpack. See doc [here](https://webpack.js.org/concepts/). *Quick note: if you're wondering why bundled `node` and `shared` code is only used for "testing" purposes*. 
 
 
 To understand globally the functionning we will explain what does the `npm run debug` command step by step.
