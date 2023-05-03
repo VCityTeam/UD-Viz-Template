@@ -2,6 +2,8 @@ import { SharedClass } from '@my_app_name/shared';
 
 import '../style.css';
 
+// CREATE DOM ELEMENT
+
 const domElement = document.body;
 
 if (DEBUG) {
@@ -42,5 +44,7 @@ mainDiv.appendChild(linkLearnUDViz);
 
 domElement.appendChild(mainDiv);
 
-const shared = new SharedClass();
+// USE CLASS FROM `shared` PACKAGE
+
+const shared = new SharedClass('BROWSER');
 shared.print();
