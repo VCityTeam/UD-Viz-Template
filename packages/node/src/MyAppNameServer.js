@@ -1,3 +1,4 @@
+/** @file This code will be interpretaded by a node environnement. It is the actually the server side.*/
 const { SharedClass } = require('@my_app_name/shared');
 
 module.exports = class MyAppNameServer {

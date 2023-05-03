@@ -1,3 +1,5 @@
+/** @file It's the main file of your application. This code will be interprate by your browser. It's here we can create your base of your DOM*/
+
 import { SharedClass } from '@my_app_name/shared';
 
 import '../style.css';
