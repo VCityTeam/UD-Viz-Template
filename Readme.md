@@ -31,7 +31,7 @@ Builds the app in the production mode.
 
 ### Github way
 
-`UD-Viz-Template` is a Github template repository. You can chose this repository as base when you create your repository from Github UI.
+`UD-Viz-Template` is a [Github Template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) repository. You can chose this repository as base when you create your repository from Github UI.
 
 ### CLI way
 
