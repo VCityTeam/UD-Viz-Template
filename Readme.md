@@ -5,7 +5,7 @@ JavaScript package. The goal of this template application is to
 
 - illustrate the main features of [UD-Viz](https://github.com/VCityTeam/UD-Viz),
 - provide code that demonstrates how such features can be configured/extended/embeded
-  and eventually combined/integrated within a full autonomous application,
+  and eventually combined/integrated within a fully autonomous application,
 - illustrate the JavaScript ecosystem required for building and running it,
 - be used as a template for creating/declining your own application.
 
