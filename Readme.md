@@ -1,12 +1,16 @@
-# A template application of the UD-Viz package
+# UD-Viz-Template : Your base for your UD-Viz demo
 
-This repository offers you a template for create your own application using [UD-Viz](https://github.com/VCityTeam/UD-Viz) framework and its node packages ([browser](https://www.npmjs.com/package/@ud-viz/browser), [shared](https://www.npmjs.com/package/@ud-viz/shared) and [node](https://www.npmjs.com/package/@ud-viz/node)).
+Hello !
+Welcome in `UD-Viz-Template` repository. It's a repository which will offers a base for create your own demo using [UD-Viz](https://github.com/VCityTeam/UD-Viz) framework and notably its three packages `npm` : [`@ud-viz/browser`](https://www.npmjs.com/package/@ud-viz/browser), [`@ud-viz/shared`](https://www.npmjs.com/package/@ud-viz/shared), [`@ud-viz/node`](https://www.npmjs.com/package/@ud-viz/node).
 
-The goal of this template is to learn to use and implements UD-Viz components:
+  
+## First of all
 
-- How such features can be configured/extended/embeded.
-- How use the html examples of ud-viz into a npm project.
-- Illustrate the javascript ecosystem required for building and running it
+Learn:
+- Knows the basics of `git` (repository, branches, fork). Useful link [W3School tutorial](https://www.w3schools.com/git/default.asp)
+- Knows the basics of JavaScript programming. Useful links : [MDN docs](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics) (browser), and [W3School tutorial](https://www.w3schools.com/nodejs/nodejs_get_started.asp) (node.js).   
+- See what is the [UD-Viz](https://github.com/VCityTeam/UD-Viz) framework.
+
 
 ## Quick starting
 
@@ -27,7 +31,13 @@ When changes are made the app is rebuild.
 
 Builds the app in the production mode.
 
-## Deriving your own UD-Viz based application
+
+
+## Deriving your own UD-Viz based demo
+
+Pour rappel ce template est une base pour votre démo il vous donne la structure de départ :  fichiers de configs (IDE, Webpack, .env), scripts executables ( ce qui est dans le dossier ./bin), les package.json (La structure des sous la forme d'un [monorepo](https://en.wikipedia.org/wiki/Monorepo?useskin=vector) = plusieurs paquet en un). Charge à vous de remplir ce template avec votre code et vos ressources.
+
+Pour ce faire la première chose à faire c'est de créer votre propre espace de travail. Si vous voulez créer un nouveau repository avec git vous avez deux manières de procéder :
 
 ### Github way
 
@@ -37,11 +47,12 @@ Builds the app in the production mode.
 
 - Create a new git repository e.g. `https://github.com/exampleuser/MyApp.git` (does not need to be hosted at github).
 
-- Duplicate this git repository refer to [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/duplicating-a-repository).
+- Duplicate this git repository refer to [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/duplicating-a-repository#mirroring-a-repository).
 
 
-## Dev entry point
+## Starting dev
 
+Vous avez maintenant votre propre repository qui prend comme base `UD-Viz-Template` et vous voulez commencer à coder. Cette section est là pour vous aider à commencer.
 
 Reminders:
 - Your app is a 3-package application, based on 3-package framework UD-Viz, respectively browser, shared and node. 
@@ -49,8 +60,7 @@ Reminders:
 - The entry point of your application is the main [./package.json](./package.json). See doc [here](https://docs.npmjs.com/cli/v6/configuring-npm/package-json).
 - The code is bundled with webpack. See doc [here](https://webpack.js.org/concepts/). *Quick note: if you're wondering why bundled `node` and `shared` code is only used for "testing" purposes*. 
 
-
-To understand globally the functionning we will explain what does the `npm run debug` command step by step.
+To get an overall understanding of how your application works we will explain what the `npm run debug` command (the first command you run to start your demo) does step by step.
 
 **Unscrambling the command**
 
