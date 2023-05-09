@@ -1,15 +1,15 @@
-# UD-Viz-Template : Your base for your UD-Viz demo
+# UD-Viz-Template : a tutorial to build your UD-Viz integrated demo
 
 Hello !
-Welcome in `UD-Viz-Template` repository. It's a repository which will offers a base for create your own demo using [UD-Viz](https://github.com/VCityTeam/UD-Viz) framework and notably its three packages `npm` : [`@ud-viz/browser`](https://www.npmjs.com/package/@ud-viz/browser), [`@ud-viz/shared`](https://www.npmjs.com/package/@ud-viz/shared), [`@ud-viz/node`](https://www.npmjs.com/package/@ud-viz/node).
+Welcome in `UD-Viz-Template` repository. This repository offers a base for create your own integrated demo using the [UD-Viz](https://github.com/VCityTeam/UD-Viz) framework and notably its three packages `npm` : [`@ud-viz/browser`](https://www.npmjs.com/package/@ud-viz/browser), [`@ud-viz/shared`](https://www.npmjs.com/package/@ud-viz/shared), [`@ud-viz/node`](https://www.npmjs.com/package/@ud-viz/node).
 
   
-## First of all
+## Required skills
 
-Learn:
-- Knows the basics of `git` (repository, branches, fork). Useful link [W3School tutorial](https://www.w3schools.com/git/default.asp)
-- Knows the basics of JavaScript programming. Useful links : [MDN docs](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics) (browser), and [W3School tutorial](https://www.w3schools.com/nodejs/nodejs_get_started.asp) (node.js).   
-- See what is the [UD-Viz](https://github.com/VCityTeam/UD-Viz) framework.
+In order to go through this tutorial you will need to be aquainted with:
+- `git` (repository, branches, fork): refer to [this git gateway](https://github.com/VCityTeam/UD-SV/blob/master/Tools/ToolGit.md)
+- the basics of JavaScript programming. Useful links : [MDN docs](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics) (browser), and [W3School tutorial](https://www.w3schools.com/nodejs/nodejs_get_started.asp) (node.js). FIXME: porter ce contenu dans la [doc standard](https://github.com/VCityTeam/UD-SV/blob/master/Tools/ToolJavaScript.md).
+- Make a quick survey of what [the UD-Viz framwork is about](https://github.com/VCityTeam/UD-Viz).
 
 
 ## Quick starting
