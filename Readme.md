@@ -3,6 +3,8 @@
 Hello !
 Welcome in `UD-Viz-Template` repository. This repository offers a base for create your own integrated demo using the [UD-Viz](https://github.com/VCityTeam/UD-Viz) framework and notably its three packages `npm` : [`@ud-viz/browser`](https://www.npmjs.com/package/@ud-viz/browser), [`@ud-viz/shared`](https://www.npmjs.com/package/@ud-viz/shared), [`@ud-viz/node`](https://www.npmjs.com/package/@ud-viz/node).
 
+
+
   
 ## Required skills
 
@@ -30,8 +32,6 @@ When changes are made the app is rebuild.
 ### `npm run build`
 
 Builds the app in the production mode.
-
-
 
 ## Deriving your own UD-Viz based demo
 
@@ -86,3 +86,33 @@ To learn what you can do with UD-Viz (to get start at least the `@ud-viz/browser
 You can start by the [SideBarWidget](https://github.com/VCityTeam/UD-Viz/tree/master/examples/SideBarWidget.html) example. Thanks to this example you pass over all main widgets ud-viz offered you and you see how to create your 3D Scene with iTowns.
 
 *WIP: SOME TUTORIALS ARE BEING WRITTEN* 
+
+
+### Hello application !
+
+**IMAGE DU RESULTAT** 
+
+
+Firstly, when you first launch the application you need to remember to install the modules.
+- `cd /MyApp`
+- `npm i`
+
+
+Then you can run the command that will build a bundle and serve your application
+- `npm run debug`
+- open http://localhost:8000
+
+You'll get a page that says welcome and invites you to go to the file [bootstrap.js](./packages/browser/src/bootstrap.js) and uncomment the lines of code to launch your application. Once this is done the http://localhost:8000 page will refresh and your first 3D city scene is on its way.
+
+Things to learn to understand bootstrap.js:
+
+`document` is a variable that is part of your browser's web API, it allows you to add / retrieve / delete / create ([html elements](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement)) in your [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Using_the_Document_Object_Model#what_is_a_dom_tree).
+To see the contents of this variable go to your browser's console on the web page of your choice and type `document`. 
+
+The `document.body` contains the [HTML body element](https://developer.mozilla.org/en-US/docs/Web/API/HTMLBodyElement) of your DOM. The <body> tag in your [index.html](./packages/browser/index.html).
+
+`landingPage` is an HTML Element defined and export by [landingPage.js](./packages/browser/src/landingPage.js) 
+
+`DEBUG` is a global variable that is set during the build of your application, it gives information about the [`mode`](https://webpack.js.org/configuration/mode/) build that was used to create the bundle.
+> In DEBUG mode, a `<script>` tag is added to your DOM to allow automatic refreshes of your web page when changes are detected.  
+
