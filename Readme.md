@@ -109,7 +109,7 @@ Things to learn to understand bootstrap.js:
 `document` is a variable that is part of your browser's web API, it allows you to add / retrieve / delete / create ([html elements](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement)) in your [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Using_the_Document_Object_Model#what_is_a_dom_tree).
 To see the contents of this variable go to your browser's console on the web page of your choice and type `document`. 
 
-The `document.body` contains the [HTML body element](https://developer.mozilla.org/en-US/docs/Web/API/HTMLBodyElement) of your DOM. The <body> tag in your [index.html](./packages/browser/index.html).
+The `document.body` contains the [HTML body element](https://developer.mozilla.org/en-US/docs/Web/API/HTMLBodyElement) of your DOM. The `<body>` tag in your [index.html](./packages/browser/index.html).
 
 `landingPage` is an HTML Element defined and export by [landingPage.js](./packages/browser/src/landingPage.js) 
 
