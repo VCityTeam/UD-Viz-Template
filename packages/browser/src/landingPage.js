@@ -1,7 +1,6 @@
 /** @file It's the main file of your application. This code will be interprate by your browser. It's here we can create your base of your DOM*/
 
-import '../style.css';
-
+import './landingPage.css';
 // CREATE DOM ELEMENT
 
 const mainDiv = document.createElement('div');
@@ -51,7 +50,7 @@ const linkLearnUDViz = document.createElement('p');
 linkLearnUDViz.textContent =
   'Modify ./packages/browser/src/bootstrap.js' +
   (DEBUG ? ' and save to reload.' : ' then rebuild and reload.') +
-  ' Uncomment the line which start your application.';
+  ' Uncomment the lines which start your application.';
 mainDiv.appendChild(linkLearnUDViz);
 
 export { mainDiv as landingPage };

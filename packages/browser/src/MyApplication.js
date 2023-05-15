@@ -9,12 +9,15 @@ export class MyApplication {
   constructor() {
     this.extent = null;
     this.frame3DPlanar = null;
+
+    this.domElement = document.createElement('div');
   }
 
   start() {
     this.initItownsExtent();
     this.initFrame3D();
     this.init3DTiles();
+    this.initUI();
   }
 
   initItownsExtent() {
@@ -46,7 +49,7 @@ export class MyApplication {
     /** Frame3DPlanar Code: https://github.com/search?q=repo%3AVCityTeam%2FUD-Viz+path%3A%2FFrame3DPlanar.js+&type=code */
     const configFrame3D = {
       hasItownsControls: true,
-      range: 10000,
+      range: 4000,
       heading: 1,
       tilt: 70,
     };
@@ -65,5 +68,13 @@ export class MyApplication {
     ];
 
     add3DTilesLayers(config3DTiles, this.frame3DPlanar.itownsView);
+  }
+
+  initUI() {
+    const label = document.createElement('h1');
+    label.textContent = 'Hello application !';
+    this.domElement.appendChild(label);
+
+    this.frame3DPlanar.appendToUI(this.domElement);
   }
 }

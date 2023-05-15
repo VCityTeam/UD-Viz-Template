@@ -3,6 +3,8 @@
 import { MyApplication } from './MyApplication';
 import { landingPage } from './landingPage';
 
+import '../style.css';
+
 // CREATE DOM ELEMENT
 const domBody = document.body;
 domBody.appendChild(landingPage);
@@ -14,5 +16,7 @@ if (DEBUG) {
   domBody.appendChild(scriptReload);
 }
 
-// const app = new MyApplication();
-// app.start();
+// START YOUR APPLICATION
+landingPage.remove();
+const app = new MyApplication();
+app.start();
