@@ -76,8 +76,6 @@ To get an overall understanding of how your application works we will explain wh
 
 ## Tutorial: Hello application !
 
-Result:
-![](doc\img\ResultMyApplication.png)
 
 ### Install and start application
 
@@ -90,6 +88,9 @@ Then you can run the command that will build a bundle and serve your application
 - open http://localhost:8000
 
 ### Uncomment bootsrap.js
+
+Result:
+![](doc\img\ResultMyApplication.png)
 
 You'll get a page that says welcome and invites you to go to the file [bootstrap.js](./packages/browser/src/bootstrap.js) and uncomment the lines of code to launch your application. Once this is done the http://localhost:8000 page will refresh and your first 3D city scene is on its way.
 
@@ -111,9 +112,13 @@ The `document.body` contains the [HTML body element](https://developer.mozilla.o
 
 ### Add a base map
 
+Result:
+![](./doc/img/ResultMyApplicationBaseMap.png)
+
+
 To add a map texture under the 3D buildings you will use a function available in @ud-viz/browser. Here are the steps to follow:
-- Go to the `bootstrap.js`.
-- import the `addBaseMapLayer` function (module) by adding this line at the top of your file: `import { addBaseMapLayer } from '@ud-viz/browser/';`.
+- Go to the [`bootstrap.js`](./).
+- import the `addBaseMapLayer` function (module) by adding this line at the top of your file: `import { addBaseMapLayer } from '@ud-viz/browser/';`. (You can access it with the `npm i` command you did earlier. You can find the @ud-viz package in your `nodes_modules` folder)
 - Call the function after starting your application:
 ```js
 addBaseMapLayer(
@@ -142,8 +147,42 @@ Things to learn to understand MyApplication.js:
 - /!\ Be careful not to confuse this with the `class` attributes that you may come across in the [html tags](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class).
 
 
+### Add your first widget
 
+Result:
+![](./doc/img/ResultMyApplicationSlideshowWidget.png)
 
-## Base your application on UD-Viz examples
+`@ud-viz/browser` provides a number of widgets that you can implement in your 3D scene.
 
-To learn what you can do with UD-Viz (to get start at least the `@ud-viz/browser` package) you can read the differents [examples](https://github.com/VCityTeam/UD-Viz/tree/master/examples) with attached [documentation](https://github.com/VCityTeam/UD-Viz/tree/master/docs/static/Devel/UD_Viz_Browser) and try to transpose them in your application.
+We will implement the SlideShow widget. Here are the steps to follow:
+
+- go to [`bootstrap.js`](./packages/browser/src/bootstrap.js)
+- import the `SlideShow` class (again a module) by adding this line at the top of your file: `import { SlideShow } from '@ud-viz/browser/src/Component/Widget/Widget';`
+- create your slideShow object at the end of file:
+```js
+const slideShow = new SlideShow(app.frame3DPlanar.itownsView, null, app.extent); // the config optional here we set at null
+```
+> see [SideShow.js](https://github.com/search?q=repo%3AVCityTeam%2FUD-Viz+path%3A%2FSlideShow.js+&type=code)
+- call `addListeners` function of SlideShow: 
+```js
+slideShow.addListeners();
+```
+- add the `plane` object3D of slideshow in scene 3D: 
+```js
+app.frame3DPlanar.scene.add(slideShow.plane);
+```
+>see [PlaneGeometry](https://threejs.org/docs/?q=geom#api/en/geometries/PlaneGeometry) of the three.js library
+- add `html` of slide of slideshow to UI:
+```js
+const parent = document.createElement('div');
+parent.style.backgroundColor = 'white';
+parent.style.width = 'fit-content';
+parent.appendChild(slideShow.html());
+
+app.frame3DPlanar.appendToUI(parent);
+```
+- you have now a SlideShow Widget with UI in your application. You can add images with drag and drop or set up slides in your config.
+
+### Base your application on UD-Viz examples
+
+To learn more of what you can do with UD-Viz (to get start at least the `@ud-viz/browser` package) you can read the differents [examples](https://github.com/VCityTeam/UD-Viz/tree/master/examples) with attached [documentation](https://github.com/VCityTeam/UD-Viz/tree/master/docs/static/Devel/UD_Viz_Browser) and try to transpose them in your application.

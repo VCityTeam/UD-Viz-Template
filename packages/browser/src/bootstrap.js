@@ -16,7 +16,7 @@ if (DEBUG) {
   domBody.appendChild(scriptReload);
 }
 
-// START YOUR APPLICATION
-landingPage.remove();
-const app = new MyApplication();
-app.start();
+// START YOUR APPLICATION (UNCOMMENT THESES LINES)
+// landingPage.remove();
+// const app = new MyApplication();
+// app.start();
