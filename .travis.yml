@@ -1,28 +1,32 @@
 # @format
-branches:
-  only:
-    - master
-
 os: linux
 dist: focal
 language: node_js
 node_js:
-  - 14
+  - 16
+
+branches:
+  only:
+    - master
 
 before_install:
-  - npm i -g npm@7
+  - npm -- version
+
+install:
+  - npm install
 
 jobs:
   include:
-    - stage: Checking dependencies
-      script:
-        - npm --version
-    - stage: DemoFull
-      script:
-        - npm install && npm run travis
-    - stage: "Markdown link checks"
-      language: node_js
-      script:
+    - script:
+        - npm run eslint
+      name: 'Lint code sources'
+    - script:
+        - npm run assert-code
+      name: 'Build code'
+    - script:
+        - npm audit --audit-level=low
+      name: 'Lightweight dependencies security audit'
+    - script:
         - npm install --global remark-cli remark-validate-links
         - remark -u validate-links .
         - |
@@ -31,3 +35,4 @@ jobs:
           if [ $warnings -gt $FAILURE_THRESHOLD ]; then
             exit 1;
           fi
+      name: 'Markdown link checks'
