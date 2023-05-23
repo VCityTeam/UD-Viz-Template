@@ -1,5 +1,6 @@
 /** @file It's the main file of your application. This code will be interprate by your browser. It's here we can create your base of your DOM*/
 
+// eslint-disable-next-line no-unused-vars
 import { MyApplication } from './MyApplication';
 import { landingPage } from './landingPage';
 

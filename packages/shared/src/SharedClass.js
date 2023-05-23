@@ -4,7 +4,8 @@
 module.exports = class SharedClass {
   /**
    * This is a constructor function that takes in a parameter called "caller".
-   * @param caller - The "caller" parameter specify what is the package who is calling
+   *
+   * @param {string} caller - The "caller" parameter specify what is the package who is calling
    */
   constructor(caller) {
     this.caller = caller;

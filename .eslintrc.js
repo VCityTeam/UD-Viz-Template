@@ -13,7 +13,9 @@ module.exports = {
       jsx: true,
     },
   },
-  globals: [DEBUG],
+  globals: {
+    DEBUG: true,
+  },
   overrides: [{ files: ['*.html'], rules: { 'prettier/prettier': ['off'] } }],
   rules: {
     'prettier/prettier': ['error'],
