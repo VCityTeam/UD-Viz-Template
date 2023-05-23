@@ -48,7 +48,7 @@ The first thing to do is to create your own workspace. If you want to create a n
 
 ## Starting dev
 
-Vous avez maintenant votre propre repository qui prend comme base `UD-Viz-Template` et vous voulez commencer à coder. Cette section est là pour vous aider à commencer.
+You now have your own repository that takes as its base `UD-Viz-Template` and you want to start coding. This section is here to help you get started.
 
 Reminders:
 - Your app is a 3-package application, based on 3-package framework UD-Viz, respectively browser, shared and node. 
@@ -177,6 +177,8 @@ app.frame3DPlanar.scene.add(slideShow.plane);
 const parent = document.createElement('div');
 parent.style.backgroundColor = 'white';
 parent.style.width = 'fit-content';
+parent.style.position = 'relative';
+parent.style.zIndex = 2;
 parent.appendChild(slideShow.html());
 
 app.frame3DPlanar.appendToUI(parent);

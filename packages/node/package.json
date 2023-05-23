@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@ud-viz/node": "file:../../../UD-Viz/packages/node",
+    "@ud-viz/node": "3.1.0",
     "@my_app_name/shared": "^1.0.0"
   },
   "devDependencies": {

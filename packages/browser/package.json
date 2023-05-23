@@ -11,6 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "@my_app_name/shared": "^1.0.0",
-    "@ud-viz/browser": "file:../../../UD-Viz/packages/browser"
+    "@ud-viz/browser": "3.1.0"
   }
 }
