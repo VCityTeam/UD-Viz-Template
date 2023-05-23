@@ -90,7 +90,7 @@ Then you can run the command that will build a bundle and serve your application
 ### Uncomment bootsrap.js
 
 Result:
-![](doc\img\ResultMyApplication.png)
+![](./doc/img/ResultMyApplication.png)
 
 You'll get a page that says welcome and invites you to go to the file [bootstrap.js](./packages/browser/src/bootstrap.js) and uncomment the lines of code to launch your application. Once this is done the http://localhost:8000 page will refresh and your first 3D city scene is on its way.
 
