@@ -117,7 +117,7 @@ Result:
 
 To add a map texture under the 3D buildings you will use a function available in @ud-viz/browser. Here are the steps to follow:
 - Go to the [`bootstrap.js`](./).
-- import the `addBaseMapLayer` function (module) by adding this line at the top of your file: `import { addBaseMapLayer } from '@ud-viz/browser/';`. (You can access it with the `npm i` command you did earlier. You can find the @ud-viz package in your `nodes_modules` folder)
+- import the `addBaseMapLayer` function (module) by adding this line at the top of your file: `import { addBaseMapLayer } from '@ud-viz/browser/';`. (You can access it thanks to the `npm i` command you did earlier. You can find the @ud-viz package in your `nodes_modules` folder)
 - Call the function after starting your application:
 ```js
 addBaseMapLayer(
