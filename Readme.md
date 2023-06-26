@@ -88,11 +88,14 @@ If you open/edit the [./bin/debug.js](./bin/debug.js) script, you will encounter
 
 ### Install and start application
 
-Firstly, when you first launch the application you need to remember to install the modules.
-- `cd /MyApp`
-- `npm i`
+Before launching the application for the firs time, you need to install the packagages
+it depends on (they will end up in `node_modules` subdirectory). For this
+```bash
+cd /MyApp
+npm i
+```
 
-Then you can run the command that will build a bundle and serve your application
+Then you can run the following command that will build a bundle and serve your application
 - `npm run debug`
 - open http://localhost:8000
 
