@@ -51,7 +51,7 @@ The first thing to do is to create your own workspace. If you want to create a n
 You now have your own repository that takes `UD-Viz-Template` as its base and you want to start coding. 
 This section is here to help you getting started.
 
-Keep in mind that:
+**Keep in mind that:**
 - Your App is a 3-package application that are themselves based on UD-Viz's 3-package framework: 
   - the `browser` package that is to be interpreted by a web-browser,
   - the `node` package that is to be interpreted by Node.js environment and
@@ -62,9 +62,9 @@ Keep in mind that:
   *Quick note: although `node` and `shared` npm packages could be used without requiring their bundling, we still bundle
   them with webpack on robustness purposes (testing the imports, name resolution...)*. 
 
-To get an overall understanding of how your application works we will explain what the `npm run debug` command (the first command you run to start your demo) does step by step.
+**Unscramble the `npm run debug` command**
 
-**Unscrambling the command**
+To get an overall understanding of how your application is launched, let us explain step by step what the `npm run debug` command (the first command you run to start your demo) does:
 
 > dotenv -e .env -- cross-env NODE_ENV=development nodemon --trace-warnings --verbose --watch ./packages/shared/src --watch ./packages/browser/src --watch ./packages/browser/style.css --watch ./packages/node/src  --delay 2500ms -e js,css,html ./bin/debug.js
 
@@ -73,12 +73,15 @@ To get an overall understanding of how your application works we will explain wh
 - **`cross-env NODE_ENV=development`**: *cross-env* package allows to complement *process.env* environment variables with variables defined on the CLI (*here the NODE_ENV get defined*): refer to [cross-env](https://www.npmjs.com/package/cross-env), [process.env](https://nodejs.org/dist/latest-v8.x/docs/api/process.html#process_process_env).
 - **`nodemon [--options] ./bin/debug.js `**: `nodemon`, a node tool package that eases the development cycle, restarts the interpretation of a javascript file (*here [./bin/debug.js](./bin/debug.js)*) when any of the watched files (`--watch` flag) is changed/edited. See [nodemon](https://www.npmjs.com/package/nodemon).
 
-**dive to [./bin/debug.js](./bin/debug.js)**
+**What the [./bin/debug.js](./bin/debug.js) script does**
 
-- exec and spawn are two functions from [*child-process-promise*](https://www.npmjs.com/package/child-process-promise) which allows to execute node script. See [Promise doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
-- **`exec('npm run build-debug --prefix ./packages/browser')`**: It calls *npm run build-debug* defined in ./packages/browser/.package.json :
-  - **`cross-env NODE_ENV=development webpack`**: webpack is the tool it permits to create a bundle of your code. The config is defined in *./packages/browser/webpack.config.json*. See doc [here](https://webpack.js.org/concepts/).
-  - **`const child = spawn('node', ['./bin/host.js', process.env.PORT || 8000], { shell: true, });`**: Interprates [./bin/host.js](./bin/host.js) which launchs an express server. See [express](https://www.npmjs.com/package/express)
+If you open/edit the [./bin/debug.js](./bin/debug.js) script, you will encounter
+
+- exec and spawn that are two functions from [*child-process-promise*](https://www.npmjs.com/package/child-process-promise) which allow to execute node (JS) scripts (refer to [Promise doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)).
+- **`exec('npm run build-debug --prefix ./packages/browser')`**: calls *npm run build-debug*
+  that is defined in [./packages/browser/package.json](./packages/browser/package.json) that in turn calls :
+  - **`cross-env NODE_ENV=development webpack`**: webpack is the tool that bundles your code. Its configugration is defined in *./packages/browser/webpack.config.json*. See doc [here](https://webpack.js.org/concepts/).
+- **`const child = spawn('node', ['./bin/host.js', process.env.PORT || 8000], { shell: true, });`**: Interprates [./bin/host.js](./bin/host.js) which in turn launches an express server (refer to [express](https://www.npmjs.com/package/express))
 
 ## Tutorial: Hello application !
 
