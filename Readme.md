@@ -98,11 +98,10 @@ npm i
 Then you can run the following command that will build a bundle and serve your application
 - `npm run debug`
 - open http://localhost:8000
+![Alt text](./doc/img/ReceptionMyApplication.png)
 
 ### Uncomment bootsrap.js
 
-Result:
-![](./doc/img/ResultMyApplication.png)
 
 You'll get a page that says welcome and invites you to go to the file [bootstrap.js](./packages/browser/src/bootstrap.js) and uncomment the lines of code to launch your application. Once this is done the http://localhost:8000 page will refresh and your first 3D city scene is on its way.
 
@@ -120,12 +119,14 @@ The `document.body` contains the [HTML body element](https://developer.mozilla.o
 `landingPage` is an HTML Element defined and export by [landingPage.js](./packages/browser/src/landingPage.js) 
 
 `DEBUG` is a global variable that is set during the build of your application, it gives information about the [`mode`](https://webpack.js.org/configuration/mode/) build that was used to create the bundle.
-> In DEBUG mode, a `<script>` tag is added to your DOM to allow automatic refreshes of your web page when changes are detected.  
+> In DEBUG mode, a `<script>` tag is added to your DOM to allow automatic refreshes of your web page when changes are detected.
+
+
+Result:
+![](./doc/img/ResultMyApplication.png)
 
 ### Add a base map
 
-Result:
-![](./doc/img/ResultMyApplicationBaseMap.png)
 
 To add a map texture under the 3D buildings you will use a function available in @ud-viz/browser. Here are the steps to follow:
 - Go to the [`bootstrap.js`](./).
@@ -158,10 +159,11 @@ Things to learn to understand MyApplication.js:
 - /!\ Be careful not to confuse this with the `class` attributes that you may come across in the [html tags](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class).
 
 
+Result:
+![](./doc/img/ResultMyApplicationBaseMap.png)
 ### Add your first widget
 
-Result:
-![](./doc/img/ResultMyApplicationSlideshowWidget.png)
+
 
 `@ud-viz/browser` provides a number of widgets that you can implement in your 3D scene.
 
@@ -195,6 +197,9 @@ parent.appendChild(slideShow.html());
 app.frame3DPlanar.appendToUI(parent);
 ```
 - you have now a SlideShow Widget with UI in your application. You can add images with drag and drop or set up slides in your config.
+
+Result:
+![](./doc/img/ResultMyApplicationSlideshowWidget.png)
 
 ### Base your application on UD-Viz examples
 
