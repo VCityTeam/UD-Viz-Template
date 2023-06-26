@@ -48,13 +48,19 @@ The first thing to do is to create your own workspace. If you want to create a n
 
 ## Starting dev
 
-You now have your own repository that takes as its base `UD-Viz-Template` and you want to start coding. This section is here to help you get started.
+You now have your own repository that takes `UD-Viz-Template` as its base and you want to start coding. 
+This section is here to help you getting started.
 
-Reminders:
-- Your app is a 3-package application, based on 3-package framework UD-Viz, respectively browser, shared and node. 
-- Split-code by interpretation environment:  `browser` package is interpretable by the browser,  `node` package is interpretable by Node.js and  `shared` package is interpretable by both environments.
-- The entry point of your application is the main [./package.json](./package.json). See doc [here](https://docs.npmjs.com/cli/v6/configuring-npm/package-json).
-- The code is bundled with webpack. See doc [here](https://webpack.js.org/concepts/). *Quick note: if you're wondering why bundled `node` and `shared` code is only used for "testing" purposes*. 
+Keep in mind that:
+- Your App is a 3-package application that are themselves based on UD-Viz's 3-package framework: 
+  - the `browser` package that is to be interpreted by a web-browser,
+  - the `node` package that is to be interpreted by Node.js environment and
+  - the `shared` package that can be interpreted by both above environments.
+- A central starting point for understanding and working on your application is the main [./package.json](./package.json)
+  (refer [here](https://docs.npmjs.com/cli/v6/configuring-npm/package-json) for general documentation).
+- The code is bundled with webpack (refer [here](https://webpack.js.org/concepts/) for webpack general documentation).
+  *Quick note: although `node` and `shared` npm packages could be used without requiring their bundling, we still bundle
+  them with webpack on robustness purposes (testing the imports, name resolution...)*. 
 
 To get an overall understanding of how your application works we will explain what the `npm run debug` command (the first command you run to start your demo) does step by step.
 
