@@ -105,7 +105,7 @@ that welcomes you and invites you to edit the [bootstrap.js](./packages/browser/
 
 ![Alt text](./doc/img/ReceptionMyApplication.png)
 
-### Uncomment bootsrap.js
+### Obtaining your first 3D City scene: uncomment `bootsrap.js` 
 
 As proposed, you can now edit the [bootstrap.js](./packages/browser/src/bootstrap.js) file which can be commented as follows : 
 
@@ -132,13 +132,17 @@ You should now be able to watch your first 3D city scene as illustrated below
 
 ![](./doc/img/ResultMyApplication.png)
 
-### Add a base map
+### Adding terrain to the scene: add a base map
 
+To add a map texture (representing the terrain) under the 3D buildings, you will need to use a function 
+provided by the [@ud-viz/browser](https://www.npmjs.com/package/@ud-viz/browser) package.
+For this, follow those steps:
+- Edit the [bootstrap.js](./packages/browser/src/bootstrap.js) file,
+- import the `addBaseMapLayer` function (module) by adding this line at the top of your file: `import { addBaseMapLayer } from '@ud-viz/browser';`.
+ (the @ud-viz/browser package was made available at installation stage then you used the `npm i` command:
+  the module definition was then placed within the `nodes_modules` sub-folder)
+- Call the `addBaseMapLayer()` function, just after starting your application (after the `app.start();`):
 
-To add a map texture under the 3D buildings you will use a function available in @ud-viz/browser. Here are the steps to follow:
-- Go to the [`bootstrap.js`](./).
-- import the `addBaseMapLayer` function (module) by adding this line at the top of your file: `import { addBaseMapLayer } from '@ud-viz/browser/';`. (You can access it thanks to the `npm i` command you did earlier. You can find the @ud-viz package in your `nodes_modules` folder)
-- Call the function after starting your application:
 ```js
 addBaseMapLayer(
   {
@@ -155,6 +159,7 @@ addBaseMapLayer(
   app.extent
 );
 ```
+
 The function takes as parameters:
 - a config in the form of a [javascript object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer)
 - an `iTowns.PlanarView`. This is what creates the html element that contains the 3D scene (camera, renderer...). See [itowns doc](http://www.itowns-project.org/itowns/docs/#api/View/PlanarView).   
@@ -165,12 +170,10 @@ Things to learn to understand MyApplication.js:
 - MyApplication is of type class. See the [MDN related doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) 
 - /!\ Be careful not to confuse this with the `class` attributes that you may come across in the [html tags](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class).
 
-
 Result:
 ![](./doc/img/ResultMyApplicationBaseMap.png)
+
 ### Add your first widget
-
-
 
 `@ud-viz/browser` provides a number of widgets that you can implement in your 3D scene.
 
