@@ -96,33 +96,40 @@ npm i
 ```
 
 Then you can run the following command that will build a bundle and serve your application
-- `npm run debug`
-- open http://localhost:8000
+```bash
+npm run debug
+```
+
+If you now open `http://localhost:8000` with a web-browseer, you'll get a page (refer below)
+that welcomes you and invites you to edit the [bootstrap.js](./packages/browser/src/bootstrap.js).
+
 ![Alt text](./doc/img/ReceptionMyApplication.png)
 
 ### Uncomment bootsrap.js
 
+As proposed, you can now edit the [bootstrap.js](./packages/browser/src/bootstrap.js) file which can be commented as follows : 
 
-You'll get a page that says welcome and invites you to go to the file [bootstrap.js](./packages/browser/src/bootstrap.js) and uncomment the lines of code to launch your application. Once this is done the http://localhost:8000 page will refresh and your first 3D city scene is on its way.
+- [`import xxx from 'xxx'`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) is used to import modules (=code, assets ...). The notion of module is very important in Javascript I advise you to read [the MDN doc guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
 
-Things to learn to understand bootstrap.js:
+- `import './xxx.css'` indicates that the .css file should be added to the application bundle. To understand web-bundling you can follow the [Getting-Started from webpack](https://webpack.js.org/guides/getting-started/)
 
-[`import xxx from 'xxx'`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) is used to import modules (=code, assets ...). The notion of module is very important in Javascript I advise you to read [the MDN doc guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules).
+- `document` is a variable that is part of your browser's web API: it allows you to add / retrieve / delete / create ([html elements](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement)) in your [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Using_the_Document_Object_Model#what_is_a_dom_tree).
+In order to observe the content of this variable (at run time) go to your browser's console on the web page of your choice and type `document`. 
 
-`import './xxx.css'` indicates that the .css file should be added to the application bundle. To understand web-bundling you can follow the [Getting-Started from webpack](https://webpack.js.org/guides/getting-started/)
+- The `document.body` contains the [HTML body element](https://developer.mozilla.org/en-US/docs/Web/API/HTMLBodyElement) of your DOM. The `<body>` tag in your [index.html](./packages/browser/index.html).
 
-`document` is a variable that is part of your browser's web API, it allows you to add / retrieve / delete / create ([html elements](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement)) in your [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_object_model/Using_the_Document_Object_Model#what_is_a_dom_tree).
-To see the contents of this variable go to your browser's console on the web page of your choice and type `document`. 
+- `landingPage` is an HTML Element defined and export by [landingPage.js](./packages/browser/src/landingPage.js) 
 
-The `document.body` contains the [HTML body element](https://developer.mozilla.org/en-US/docs/Web/API/HTMLBodyElement) of your DOM. The `<body>` tag in your [index.html](./packages/browser/index.html).
-
-`landingPage` is an HTML Element defined and export by [landingPage.js](./packages/browser/src/landingPage.js) 
-
-`DEBUG` is a global variable that is set during the build of your application, it gives information about the [`mode`](https://webpack.js.org/configuration/mode/) build that was used to create the bundle.
+- `DEBUG` is a global variable that is set during the build of your application, it gives information about the [`mode`](https://webpack.js.org/configuration/mode/) build that was used to create the bundle.
 > In DEBUG mode, a `<script>` tag is added to your DOM to allow automatic refreshes of your web page when changes are detected.
 
+You can now proceed with uncommenting the last lines of the `bootstrap.js` code (as indicated).
+As soon as you save the file, the `nodemon` mechanisme should:
+- relaunch your application,
+- refresh the `http://localhost:8000` browser tab. 
 
-Result:
+You should now be able to watch your first 3D city scene as illustrated below
+
 ![](./doc/img/ResultMyApplication.png)
 
 ### Add a base map
