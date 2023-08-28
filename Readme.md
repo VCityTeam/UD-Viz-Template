@@ -122,14 +122,12 @@ To add a map texture under the 3D buildings you will use a function available in
 ```js
 addBaseMapLayer(
   {
-    url: 'https://download.data.grandlyon.com/wms/grandlyon',
-    name: 'Ortho2018_Dalle_unique_8cm_CC46',
+    url: 'https://imagerie.data.grandlyon.com/geoserver/grandlyon/ows',
+    name: 'ortho_2018',
     version: '1.3.0',
     format: 'image/jpeg',
     layer_name: 'Base_Map',
     transparent: true,
-    image:
-      'https://download.data.grandlyon.com/catalogue/srv/fre//resources.get?uuid=7e0bab06-ff3b-453e-9b72-e16b8f08d926&fname=ortho2018_s.png',
   },
   app.frame3DPlanar.itownsView,
   app.extent
