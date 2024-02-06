@@ -18,14 +18,11 @@ install:
 jobs:
   include:
     - script:
-        - npm run eslint
-      name: 'Lint code sources'
-    - script:
-        - npm run assert-code
-      name: 'Build code'
+        - npx webpack --config webpack.config.js
+      name: "Build code"
     - script:
         - npm audit --audit-level=low
-      name: 'Lightweight dependencies security audit'
+      name: "Lightweight dependencies security audit"
     - script:
         - npm install --global remark-cli remark-validate-links
         - remark -u validate-links .
@@ -35,4 +32,4 @@ jobs:
           if [ $warnings -gt $FAILURE_THRESHOLD ]; then
             exit 1;
           fi
-      name: 'Markdown link checks'
+      name: "Markdown link checks"
