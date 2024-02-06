@@ -1,7 +1,2 @@
-.idea/
-node_modules
-dist
-lib
-.vs
-.vscode
-TODO.txt
+dist/
+node_modules/
