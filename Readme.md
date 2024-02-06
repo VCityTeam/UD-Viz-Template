@@ -2,17 +2,16 @@
 
 <!-- TOC -->
 
-- [How to create your ud-viz based application](#how-to-create-your-ud-viz-based-application)
-  - [What you will get (for the impatient)](#what-you-will-get-for-the-impatient)
-  - [Skills recommended for building your demo](#skills-recommended-for-building-your-demo)
-  - [Prerequisites](#prerequisites)
-  - [Basic (npm) project configuration](#basic-npm-project-configuration)
-  - [Start providing the application JS code](#start-providing-the-application-js-code)
-  - [Create the code bundle by providing a `webpack.config.js`](#create-the-code-bundle-by-providing-a-webpackconfigjs)
-  - [Import the application bundle into the `index.html` and service the app](#import-the-application-bundle-into-the-indexhtml-and-service-the-app)
-  - [Define your application (CSS) style](#define-your-application-css-style)
-  - [Serve your application and access it](#serve-your-application-and-access-it)
-  - [Further UD-Viz material](#further-ud-viz-material)
+- [What you will get for the impatient](#what-you-will-get-for-the-impatient)
+- [Skills recommended for building your demo](#skills-recommended-for-building-your-demo)
+- [Prerequisites](#prerequisites)
+- [Basic npm project configuration](#basic-npm-project-configuration)
+- [Start providing the application JS code](#start-providing-the-application-js-code)
+- [Create the code bundle by providing a webpack.config.js](#create-the-code-bundle-by-providing-a-webpackconfigjs)
+- [Import the application bundle into the index.html and service the app](#import-the-application-bundle-into-the-indexhtml-and-service-the-app)
+- [Define your application CSS style](#define-your-application-css-style)
+- [Serve your application and access it](#serve-your-application-and-access-it)
+- [Further UD-Viz material](#further-ud-viz-material)
 
 <!-- /TOC -->
 
