@@ -2,16 +2,18 @@
 
 <!-- TOC -->
 
-- [What you will get for the impatient](#what-you-will-get-for-the-impatient)
-- [Skills recommended for building your demo](#skills-recommended-for-building-your-demo)
-- [Prerequisites](#prerequisites)
-- [Basic npm project configuration](#basic-npm-project-configuration)
-- [Start providing the application JS code](#start-providing-the-application-js-code)
-- [Create the code bundle by providing a webpack.config.js](#create-the-code-bundle-by-providing-a-webpackconfigjs)
-- [Import the application bundle into the index.html and service the app](#import-the-application-bundle-into-the-indexhtml-and-service-the-app)
-- [Define your application CSS style](#define-your-application-css-style)
-- [Serve your application and access it](#serve-your-application-and-access-it)
-- [Further UD-Viz material](#further-ud-viz-material)
+
+- [How to create your ud-viz based application](#how-to-create-your-ud-viz-based-application)
+  - [What you will get (for the impatient)](#what-you-will-get-for-the-impatient)
+  - [Skills recommended for building your demo](#skills-recommended-for-building-your-demo)
+  - [Prerequisites](#prerequisites)
+  - [Basic (npm) project configuration](#basic-npm-project-configuration)
+  - [Start providing the application JS code](#start-providing-the-application-js-code)
+  - [Create the code bundle by providing a `webpack.config.js`](#create-the-code-bundle-by-providing-a-webpackconfigjs)
+  - [Import the application bundle into the `index.html` and service the app](#import-the-application-bundle-into-the-indexhtml-and-service-the-app)
+  - [Define your application (CSS) style](#define-your-application-css-style)
+  - [Serve your application and access it](#serve-your-application-and-access-it)
+  - [Further UD-Viz material](#further-ud-viz-material)
 
 <!-- /TOC -->
 
@@ -25,7 +27,7 @@ application with the following commands
 git clone https://github.com/VCityTeam/UD-Viz-template.git
 npm install 
 npx webpack --config webpack.config.js
-python3 -m http.server
+node ./bin/server.js
 firefox http://localhost:8000
 ```
 
@@ -40,7 +42,6 @@ In order to go through this tutorial you will need to be acquainted with:
 
 You will need to install the following tools
 - npm (refer to [here for some quick guidelines](https://github.com/VCityTeam/UD-SV/blob/master/Tools/ToolNpm.md))
-- [Python](https://www.python.org/downloads/) (to launch http server)
 
 ## Basic (npm) project configuration
 
@@ -303,10 +304,29 @@ For this you can
 ## Serve your application and access it
 
 Create an http server that will serve the `my-demo` which be done e.g. with
-python3 through
+express.
+
+To do this create a file called `./bin/server.js` and add the following content to it: 
+```js
+// Code adapted from https://www.npmjs.com/package/express
+const path = require('path');
+
+const express = require('express')
+const app = express()
+
+app.use(express.static(path.resolve(__dirname, '../')));
+
+app.listen(8000)
+```
+
+Install express
 ```bash
-cd my-demo
-python3 -m http.server
+npm install express --save-dev
+```
+
+To start an express server using this script, run the following code:
+```bash
+node ./bin/server.js
 ```
 
 You can now access your web application by web-browsing the URL returned by the
