@@ -188,6 +188,7 @@ assembled together to form/define your application
   ```
   The above instructions should add new entries in the `dependencies` section 
   of your `package.json.`
+  - Note that `itowns` and `proj4` should be provided automatically as peer dependencies (for example see the [point cloud visualizer package.json](https://github.com/VCityTeam/UD-Viz/blob/master/packages/point_cloud_visualizer/package.json)) and do not need to be installed through npm.
 
   Troubleshooting the above dependencies installation: when the installation 
   of the dependencies do error, you might consider 
