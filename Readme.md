@@ -40,6 +40,7 @@ In order to go through this tutorial you will need to be acquainted with:
 
 You will need to install the following tools
 - npm (refer to [here for some quick guidelines](https://github.com/VCityTeam/UD-SV/blob/master/Tools/ToolNpm.md))
+- [Python](https://www.python.org/downloads/) (to launch http server)
 
 ## Basic (npm) project configuration
 
@@ -87,7 +88,7 @@ assembled together to form/define your application
   <!DOCTYPE html>
   <html>
   <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8"/>
   <title>Title of the document</title>
   </head>
 
@@ -138,7 +139,7 @@ assembled together to form/define your application
 		- Bookmark
 		- ColoLayer, Extent, WMSSource, ElevationLayer, STRATEGY_DICHOTOMY
 
-  You should obtain an [`index.js` looking like this](./my-demo/src/index.js).
+  You should obtain an [`index.js` looking like this](./src/index.js).
 
 - A couple remarks about the content of the resulting `index.js`:
 
