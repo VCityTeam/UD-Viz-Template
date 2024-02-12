@@ -88,7 +88,7 @@ assembled together to form/define your application
   <!DOCTYPE html>
   <html>
   <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8">
   <title>Title of the document</title>
   </head>
 
